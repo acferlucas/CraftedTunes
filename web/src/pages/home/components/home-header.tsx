@@ -1,11 +1,12 @@
 import { Guitar } from 'lucide-react'
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 
 export function HomeHeader() {
   const { pathname } = useLocation()
+  const navigate = useNavigate()
 
   return (
     <>
@@ -35,7 +36,9 @@ export function HomeHeader() {
                 Quero trabalhar
               </NavLink>
             </section>
-            <Button variant="ghost">Entrar</Button>
+            <Button variant="ghost" onClick={() => navigate('/sign-in')}>
+              Entrar
+            </Button>
           </nav>
         </div>
       </header>

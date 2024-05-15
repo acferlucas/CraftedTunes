@@ -1,4 +1,5 @@
 import { AwardIcon, BadgePlus, ShieldCheck } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 
 import { Button } from '@/components/ui/button'
 import {
@@ -10,6 +11,7 @@ import {
 } from '@/components/ui/card'
 
 export function HomeOrderCard() {
+  const navigate = useNavigate()
   return (
     <Card className="h-full border-none bg-transparent shadow-none">
       <CardHeader>
@@ -33,19 +35,23 @@ export function HomeOrderCard() {
           Brasil
         </CardTitle>
         <CardDescription>
-          <p className="mt-4">
+          <span className="mt-4 block">
             Encontre talentosos luthiers prontos para transformar sua visão
             musical em realidade. Construa instrumentos musicais personalizados
             de forma rápida e segura. Conectamos você com uma comunidade de
             luthiers talentosos, garantindo uma comunicação fluida e resultados
             excepcionais.
-          </p>
+          </span>
         </CardDescription>
       </CardHeader>
       <CardFooter className="flex gap-4">
-        <Button>Eu quero encomendar</Button>
+        <Button onClick={() => navigate('/sign-up/client')}>
+          Eu quero encomendar
+        </Button>
 
-        <Button variant="outline">Quero Trabalhar como luthier!</Button>
+        <Button onClick={() => navigate('/job')} variant="outline">
+          Quero Trabalhar como luthier!
+        </Button>
       </CardFooter>
     </Card>
   )
