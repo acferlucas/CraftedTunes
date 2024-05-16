@@ -1,11 +1,12 @@
 import { Label } from '@radix-ui/react-label'
+import { NavLink } from 'react-router-dom'
 
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 
 export function SignUpluthier() {
   return (
-    <div className="flex h-screen items-center justify-center py-12">
+    <div className="flex h-screen items-center justify-center py-12 ">
       <div className="mx-auto grid w-[350px] gap-6">
         <div className="grid gap-2 text-center">
           <h1 className="text-3xl font-bold">Cadastro Luthier</h1>
@@ -47,6 +48,13 @@ export function SignUpluthier() {
           <Button type="submit" className="w-full">
             Cadastrar
           </Button>
+
+          <div className="mt-4 text-center text-sm">
+            Já tem uma conta ?{' '}
+            <NavLink to="/sign-in" className="underline">
+              Entrar
+            </NavLink>
+          </div>
         </div>
       </div>
     </div>

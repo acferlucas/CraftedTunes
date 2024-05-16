@@ -1,9 +1,11 @@
 import { createBrowserRouter } from 'react-router-dom'
 
+import { AppLayout } from './pages/_layout/app'
 import { AuthLayout } from './pages/_layout/auth'
 import { Home } from './pages/_layout/home'
+import { Dashboard } from './pages/app/luthier/dashboard/dashboard'
 import { Signin } from './pages/auth/sign-in'
-import { SignUpClient } from './pages/auth/sign-up'
+import { SignUpClient } from './pages/auth/sign-up-client'
 import { SignUpluthier } from './pages/auth/sign-up-luthier'
 import { ClientOrder } from './pages/home/client-order'
 import { LuthierJob } from './pages/home/luthier-job'
@@ -30,6 +32,16 @@ export const router = createBrowserRouter([
       { path: '/sign-in', element: <Signin /> },
       { path: '/sign-up/client', element: <SignUpClient /> },
       { path: '/sign-up/luthier', element: <SignUpluthier /> },
+    ],
+  },
+  {
+    path: '/',
+    element: <AppLayout />,
+    children: [
+      {
+        path: '/luthier',
+        element: <Dashboard />,
+      },
     ],
   },
 ])
