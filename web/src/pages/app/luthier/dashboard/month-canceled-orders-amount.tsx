@@ -7,7 +7,7 @@ export function MonthCanceledOrdersAmountCard() {
     <Card>
       <CardHeader className="flex-row items-center justify-between space-y-0 pb-2">
         <CardTitle className="text-base font-semibold">
-          Pedidos cancelados (mês)
+          Propostas canceladas (mês)
         </CardTitle>
         <X className="h-4 w-5 text-muted-foreground" />
       </CardHeader>

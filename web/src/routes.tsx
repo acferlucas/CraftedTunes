@@ -4,6 +4,8 @@ import { AppLayout } from './pages/_layout/app'
 import { AuthLayout } from './pages/_layout/auth'
 import { Home } from './pages/_layout/home'
 import { Dashboard } from './pages/app/luthier/dashboard/dashboard'
+import { Deals } from './pages/app/luthier/deals/deals'
+import { Orders } from './pages/app/luthier/orders/orders'
 import { Signin } from './pages/auth/sign-in'
 import { SignUpClient } from './pages/auth/sign-up-client'
 import { SignUpluthier } from './pages/auth/sign-up-luthier'
@@ -41,6 +43,14 @@ export const router = createBrowserRouter([
       {
         path: '/luthier',
         element: <Dashboard />,
+      },
+      {
+        path: '/luthier/orders',
+        element: <Orders />,
+      },
+      {
+        path: '/luthier/deals',
+        element: <Deals />,
       },
     ],
   },

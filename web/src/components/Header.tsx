@@ -1,5 +1,5 @@
 import { CircleUser, Menu, Package2 } from 'lucide-react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 
 import { Button } from './ui/button'
 import {
@@ -13,37 +13,42 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet'
 
 export function Header() {
+  const { pathname } = useLocation()
   return (
     <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
       <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
         <NavLink
-          to="#"
+          to="/luthier"
           className="flex items-center gap-2 text-lg font-semibold md:text-base"
         >
           <Package2 className="h-6 w-6" />
           <span className="sr-only">CraftTune</span>
         </NavLink>
         <NavLink
-          to="#"
-          className="text-muted-foreground transition-colors hover:text-foreground"
+          data-current={pathname === '/luthier'}
+          to="/luthier"
+          className="text-muted-foreground transition-colors hover:text-foreground data-[current=true]:text-foreground"
         >
           Dashboard
         </NavLink>
         <NavLink
-          to="#"
-          className="text-muted-foreground transition-colors hover:text-foreground"
+          data-current={pathname === '/luthier/orders'}
+          to="/luthier/orders"
+          className="text-muted-foreground transition-colors hover:text-foreground data-[current=true]:text-foreground"
         >
           Encomendas
         </NavLink>
         <NavLink
+          data-current={pathname === ''}
           to="#"
-          className="text-muted-foreground transition-colors hover:text-foreground"
+          className="text-muted-foreground transition-colors hover:text-foreground data-[current=true]:text-foreground"
         >
           Portfolio
         </NavLink>
         <NavLink
+          data-current={pathname === ''}
           to="#"
-          className="text-muted-foreground transition-colors hover:text-foreground"
+          className="text-muted-foreground transition-colors hover:text-foreground data-[current=true]:text-foreground"
         >
           Clientes
         </NavLink>
