@@ -10,7 +10,7 @@ export function HomeHeader() {
 
   return (
     <>
-      <header className="flex w-full items-center justify-center bg-white p-4">
+      <header className="flex w-full items-center justify-center bg-muted p-4">
         <div className="flex w-4/5 items-center gap-6 px-2">
           <figure className="flex items-center">
             <Guitar className="h-12 w-12 text-purple-700" />

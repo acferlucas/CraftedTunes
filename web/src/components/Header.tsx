@@ -1,6 +1,7 @@
 import { CircleUser, Menu, Package2 } from 'lucide-react'
 import { NavLink, useLocation } from 'react-router-dom'
 
+import { useTheme } from './theme/theme-provider'
 import { Button } from './ui/button'
 import {
   DropdownMenu,
@@ -14,6 +15,8 @@ import { Sheet, SheetContent, SheetTrigger } from './ui/sheet'
 
 export function Header() {
   const { pathname } = useLocation()
+  const { setTheme } = useTheme()
+
   return (
     <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
       <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
@@ -39,18 +42,18 @@ export function Header() {
           Encomendas
         </NavLink>
         <NavLink
-          data-current={pathname === ''}
-          to="#"
+          data-current={pathname === '/luthier/deals'}
+          to="/luthier/deals"
           className="text-muted-foreground transition-colors hover:text-foreground data-[current=true]:text-foreground"
         >
-          Portfolio
+          Propostas
         </NavLink>
         <NavLink
           data-current={pathname === ''}
           to="#"
           className="text-muted-foreground transition-colors hover:text-foreground data-[current=true]:text-foreground"
         >
-          Clientes
+          portfolio
         </NavLink>
       </nav>
       <Sheet>
@@ -113,6 +116,15 @@ export function Header() {
               <DropdownMenuSeparator />
               <DropdownMenuItem>configurações</DropdownMenuItem>
               <DropdownMenuItem>suporte</DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuLabel>Tema</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem onClick={() => setTheme('light')}>
+                Light
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setTheme('dark')}>
+                Dark
+              </DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem>Sair</DropdownMenuItem>
             </DropdownMenuContent>

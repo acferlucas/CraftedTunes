@@ -27,7 +27,7 @@ import { OrderTableRow } from './order-table-row'
 
 export function Orders() {
   return (
-    <div className="flex min-h-screen w-full flex-col bg-muted/40">
+    <div className="flex w-full flex-col bg-muted/40">
       <Card x-chunk="">
         <CardHeader>
           <CardTitle>Encomendas</CardTitle>
